@@ -10,7 +10,6 @@ import telnetlib
 from util.conf_toolkit import ConfigManager
 from util.file_toolkit import *
 ConfigManager.init_class("config/emailFile.conf")
-local_file_path = ConfigManager.get_local_resource_folder()
 
 def decode_str(str_in):
     value, charset = decode_header(str_in)[0]
@@ -21,33 +20,29 @@ def decode_str(str_in):
 def get_att(msg_in,str_day_in):
     attachment_files = []
     for part in msg_in.walk():
-        # 获取附件名称类型
         file_name = part.get_filename()
-        if file_name and is_file_of_excel(file_name):
+        if file_name:
             h = email.header.Header(file_name)
             # 对附件名称进行解码
             dh = email.header.decode_header(h)
             filename = dh[0][0]
             if dh[0][1]:
-                # 将附件名称可读化
                 filename = decode_str(str(filename, dh[0][1]))
                 print(filename)
                 # filename = filename.encode("utf-8")
-            # 下载附件
-            data = part.get_payload(decode=True)
-            # 在指定目录下创建文件，注意二进制文件需要用wb模式打开
-            att_file = open(local_file_path+ filename, 'wb')
-            attachment_files.append(filename)
-            att_file.write(data)  # 保存附件
-            att_file.close()
+            #判断附件是否为excel文件
+            if is_file_of_excel(filename):
+                # 下载附件
+                data = part.get_payload(decode=True)
+                download_to_local_file(filename=filename,data=data)
+                attachment_files.append(filename)
+
     return attachment_files
 
 def run_ing():
-    # 输入邮件地址, 口令和POP3服务器地址:
     email_user = ConfigManager.get_email_username()
-    # 此处密码是授权码,用于登录第三方邮件客户端
     password = ConfigManager.get_email_password()
-    pop3_server = 'pop.163.com'
+    pop3_server = ConfigManager.get_email_server()
     # 日期赋值
     day = datetime.date.today()
     str_day = str(day).replace('-', '')
