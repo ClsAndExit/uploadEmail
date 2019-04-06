@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# coding:utf-8
 #@Time    :2019/3/31 15:39
 from util.email_toolkit import run_ing
 from util.conf_toolkit import ConfigManager

@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# coding:utf-8
 #@Time    :2019/3/31 15:45
 import pandas as pd
 from util.conf_toolkit import ConfigManager

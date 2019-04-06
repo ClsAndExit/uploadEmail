@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# coding:utf-8
 #@Time    :2019/3/31 15:56
 import poplib
 import email
@@ -55,7 +55,6 @@ def run_ing():
         time.sleep(5)
         server = poplib.POP3(pop3_server, 110, timeout=10)
 
-    print(server.getwelcome().decode('utf-8'))
     # 身份认证:
     server.user(email_user)
     server.pass_(password)
@@ -68,8 +67,6 @@ def run_ing():
     index = len(mails)
     # 倒序遍历邮件
     for i in range(index, 0, -1):
-    # 顺序遍历邮件
-    #for i in range(1, index + 1):
         resp, lines, octets = server.retr(i)
         # lines存储了邮件的原始文本的每一行,
         # 邮件的原始文本:

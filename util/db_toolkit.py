@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# coding:utf-8
 #@Time    :2019/3/31 15:44
 import pymysql
 from util import file_toolkit
