@@ -24,7 +24,7 @@ class ConfigManager:
 
     @classmethod
     def get_email_password(cls):
-        return cls._get("password", "emain_passwowrd")
+        return cls._get("password", "email_passwowrd")
 
     @classmethod
     def get_email_server(cls):

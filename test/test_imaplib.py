@@ -150,11 +150,10 @@ def protocol_manager(protocol, host, port, usr, pwd, use_ssl):
     :param pwd: password
     :param use_ssl: True if use ssl else False
     """
-    # import __main__
-    # if hasattr(__main__, protocol):
-    #     getattr(__main__, protocol)(host, port, usr, pwd, use_ssl)
-    # else:
-    #     exit_script("Wrong protocol: {0}".format(protocol))
+    if hasattr(protocol):
+        getattr(protocol)(host, port, usr, pwd, use_ssl)
+    else:
+        exit_script("Wrong protocol: {0}".format(protocol))
     pass
 
 

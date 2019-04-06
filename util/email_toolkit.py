@@ -89,6 +89,3 @@ def pop_run_ing():
             del_file_as_excel(file_name)
     server.quit()
 
-
-def imap_run_ing():
-    pass
