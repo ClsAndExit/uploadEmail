@@ -27,5 +27,9 @@ class ConfigManager:
         return cls._get("password", "email_passwowrd")
 
     @classmethod
-    def get_email_server(cls):
+    def get_email_popserver(cls):
         return cls._get("server", "pop3_server")
+
+    @classmethod
+    def get_email_imapserver(cls):
+        return cls._get("server", "imap_server")
