@@ -23,7 +23,7 @@ class PlanData(dict):
         return self["plan_uuid"]
 
     @plan_uuid.setter
-    def id(self, plan_uuid):
+    def plan_uuid(self, plan_uuid):
         self["plan_uuid"] = plan_uuid
 
     @property
@@ -31,7 +31,7 @@ class PlanData(dict):
         return self["serial_number"]
 
     @serial_number.setter
-    def id(self, serial_number):
+    def serial_number(self, serial_number):
         self["serial_number"] = serial_number
 
     @property
@@ -39,7 +39,7 @@ class PlanData(dict):
         return self["batch_number"]
 
     @batch_number.setter
-    def id(self, batch_number):
+    def batch_number(self, batch_number):
         self["batch_number"] = batch_number
 
     @property
@@ -47,7 +47,7 @@ class PlanData(dict):
         return self["steel_grade"]
 
     @steel_grade.setter
-    def id(self, steel_grade):
+    def steel_grade(self, steel_grade):
         self["steel_grade"] = steel_grade
 
     @property
@@ -55,7 +55,7 @@ class PlanData(dict):
         return self["blocks_number"]
 
     @blocks_number.setter
-    def id(self, blocks_number):
+    def blocks_number(self, blocks_number):
         self["blocks_number"] = blocks_number
 
     @property
@@ -63,7 +63,7 @@ class PlanData(dict):
         return self["billet_thickness"]
 
     @billet_thickness.setter
-    def id(self, billet_thickness):
+    def billet_thickness(self, billet_thickness):
         self["billet_thickness"] = billet_thickness
 
     @property
@@ -71,7 +71,7 @@ class PlanData(dict):
         return self["billet_width"]
 
     @billet_width.setter
-    def id(self, billet_width):
+    def billet_width(self, billet_width):
         self["billet_width"] = billet_width
 
     @property
@@ -79,7 +79,7 @@ class PlanData(dict):
         return self["billet_length"]
 
     @billet_length.setter
-    def id(self, billet_length):
+    def billet_length(self, billet_length):
         self["billet_length"] = billet_length
 
     @property
@@ -87,7 +87,7 @@ class PlanData(dict):
         return self["production_thickness"]
 
     @production_thickness.setter
-    def id(self, production_thickness):
+    def production_thickness(self, production_thickness):
         self["production_thickness"] = production_thickness
 
     @property
@@ -95,7 +95,7 @@ class PlanData(dict):
         return self["production_width"]
 
     @production_width.setter
-    def id(self, production_width):
+    def production_width(self, production_width):
         self["production_width"] = production_width
 
     @property
@@ -103,7 +103,7 @@ class PlanData(dict):
         return self["order"]
 
     @order.setter
-    def id(self, order):
+    def order(self, order):
         self["order"] = order
 
     @property
@@ -111,7 +111,7 @@ class PlanData(dict):
         return self["remarks"]
 
     @remarks.setter
-    def id(self, remarks):
+    def remarks(self, remarks):
         self["remarks"] = remarks
 
     @property
@@ -119,7 +119,7 @@ class PlanData(dict):
         return self["minute"]
 
     @minute.setter
-    def id(self, minute):
+    def minute(self, minute):
         self["minute"] = minute
 
 class Plan(dict):
@@ -128,7 +128,7 @@ class Plan(dict):
         return self["plan_uuid"]
 
     @plan_uuid.setter
-    def id(self, plan_uuid):
+    def plan_uuid(self, plan_uuid):
         self["plan_uuid"] = plan_uuid
 
     @property
@@ -136,7 +136,7 @@ class Plan(dict):
         return self["plan_company"]
 
     @plan_company.setter
-    def id(self, plan_company):
+    def plan_company(self, plan_company):
         self["plan_company"] = plan_company
 
     @property
@@ -144,7 +144,7 @@ class Plan(dict):
         return self["plan_number"]
 
     @plan_number.setter
-    def id(self, plan_number):
+    def plan_number(self, plan_number):
         self["plan_number"] = plan_number
 
     @property
@@ -152,5 +152,5 @@ class Plan(dict):
         return self["plan_produceDate"]
 
     @plan_produceDate.setter
-    def id(self, plan_produceDate):
-        self["plan_number"] = plan_produceDate
+    def plan_produceDate(self, plan_produceDate):
+        self["plan_produceDate"] = plan_produceDate

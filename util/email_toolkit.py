@@ -43,10 +43,14 @@ def runing():
     conn.login(user,password)
     #指定文件夹，这里指定收信箱
     conn.select('INBOX',readonly=True)
-    #指定要读取的邮件的类型，"ALL" -- 所有邮件；"Recent" --- 未读
-    type,data = conn.search(None,'ALL')
+    #指定要读取的邮件的类型，"ALL" -- 所有邮件；"UNSEEN" --- 未读
+    type,data = conn.search(None,'UNSEEN')
     for num in data[0].split()[::-1]:
         typ, data = conn.fetch(num, "(RFC822)")
+        #将获取到的邮件设置为已读
+        conn.store(num, '+FLAGS', '\Seen')
         message = email.message_from_string(data[0][1].decode('utf-8'))
-        get_att(message)
+        attachment_files = get_att(message)
+        read_file(file_data=attachment_files)
+    conn.close()
 
